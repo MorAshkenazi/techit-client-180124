@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Mor",
+      "email": "mora@gmail.com",
+      "password": "12345678",
+      "isAdmin": true
+    },
+    {
+      "id": "2",
+      "name": "yossi",
+      "email": "yossi@gmail.com",
+      "password": "12345678",
+      "isAdmin": false
+    }
+  ],
+  "products": []
+}
