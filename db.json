@@ -13,7 +13,39 @@
       "email": "yossi@gmail.com",
       "password": "12345678",
       "isAdmin": false
+    },
+    {
+      "id": "bcb3",
+      "name": "Harry Potter",
+      "email": "harry@gmail.com",
+      "password": "12345678",
+      "isAdmin": false
     }
   ],
-  "products": []
+  "products": [
+    {
+      "name": "Microsoft Earphones",
+      "price": 100,
+      "category": "Earphones & Headphones",
+      "description": "The Microsoft new earphones with high quality",
+      "image": "https://rukminim1.flixcart.com/image/416/416/k0flmkw0/headphone/u/2/h/queer-original-nokia-microsoft-wh-108-wired-headset-black-original-imafk8c6pjy2rhax.jpeg?q=70",
+      "id": "1"
+    },
+    {
+      "name": "Microsoft Headphones",
+      "price": 200,
+      "category": "Earphones & Headphones",
+      "description": "The Microsoft new earphones with high quality",
+      "image": "https://m.media-amazon.com/images/I/712lRY36XYS.jpg",
+      "id": "2"
+    },
+    {
+      "name": "Asus Vivobook",
+      "price": 3600,
+      "category": "Laptops",
+      "description": "Wondeful laptops",
+      "image": "https://www.asus.com/media/Odin/Websites/global/Series/12.png",
+      "id": "3"
+    }
+  ]
 }
