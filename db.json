@@ -25,7 +25,7 @@
   "products": [
     {
       "name": "Microsoft Earphones",
-      "price": 100,
+      "price": 200,
       "category": "Earphones & Headphones",
       "description": "The Microsoft new earphones with high quality",
       "image": "https://rukminim1.flixcart.com/image/416/416/k0flmkw0/headphone/u/2/h/queer-original-nokia-microsoft-wh-108-wired-headset-black-original-imafk8c6pjy2rhax.jpeg?q=70",
@@ -55,5 +55,6 @@
       "description": "prepare the mmd",
       "image": "https://www.google.com/search?q=harry+potter+book&tbm=isch&ved=2ahUKEwi2gsuO4aX6AhXrhM4BHQq7DSUQ2-cCegQIABAA&oq=harry+potter+book&gs_lcp=CgNpbWcQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgQIABAeMgQIABAeOgQIIxAnOgQIABBDUPUBWOAJYPwKaABwAHgAgAGDAYgBhAaSAQMwLjaYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=cPIqY7aKFeuJur4Piva2qAI&bih=951&biw=962#imgrc=-7lakjotHtiE3M"
     }
-  ]
+  ],
+  "carts": [{ "userId": 1, "products": [], "active": true }]
 }

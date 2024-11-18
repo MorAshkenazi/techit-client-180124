@@ -4,6 +4,7 @@ import { getAllProducts } from "../services/productsService";
 import Navbar from "./Navbar";
 import { getUserById } from "../services/usersService";
 import AddProductModal from "./AddProductModal";
+import UpdateProductModal from "./UpdateProductModal";
 
 interface ProductsProps {}
 
@@ -12,6 +13,8 @@ const Products: FunctionComponent<ProductsProps> = () => {
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const [productsChanged, setProductsChanged] = useState<boolean>(false);
   const [openAddModal, setOpenAddModal] = useState<boolean>(false);
+  const [openUpdateModal, setOpenUpdateModal] = useState<boolean>(false);
+  const [productId, setProductId] = useState<string>("");
 
   useEffect(() => {
     // check if admin
@@ -69,8 +72,24 @@ const Products: FunctionComponent<ProductsProps> = () => {
                   <p className="card-text">{product.description}</p>
                   <p className="card-text text-success">{product.price}$</p>
                   <button className="btn btn-primary">
-                    Add <i className="fa-solid fa-cart-shopping"></i>
+                    <i className="fa-solid fa-cart-shopping"></i>
                   </button>
+                  {isAdmin && (
+                    <span>
+                      <button
+                        className="btn btn-warning mx-1"
+                        onClick={() => {
+                          setOpenUpdateModal(true);
+                          setProductId(product.id as string);
+                        }}
+                      >
+                        <i className="fa-solid fa-pen"></i>
+                      </button>
+                      <button className="btn btn-danger">
+                        <i className="fa-solid fa-trash"></i>
+                      </button>
+                    </span>
+                  )}
                 </div>
               </div>
             ))
@@ -83,6 +102,12 @@ const Products: FunctionComponent<ProductsProps> = () => {
         show={openAddModal}
         onHide={() => setOpenAddModal(false)}
         refresh={refresh}
+      />
+      <UpdateProductModal
+        show={openUpdateModal}
+        onHide={() => setOpenUpdateModal(false)}
+        refresh={refresh}
+        productId={productId}
       />
     </>
   );
