@@ -46,6 +46,14 @@
       "description": "Wondeful laptops",
       "image": "https://www.asus.com/media/Odin/Websites/global/Series/12.png",
       "id": "3"
+    },
+    {
+      "id": "af6a",
+      "name": "Apple",
+      "price": 15,
+      "category": "Fantasy",
+      "description": "prepare the mmd",
+      "image": "https://www.google.com/search?q=harry+potter+book&tbm=isch&ved=2ahUKEwi2gsuO4aX6AhXrhM4BHQq7DSUQ2-cCegQIABAA&oq=harry+potter+book&gs_lcp=CgNpbWcQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgQIABAeMgQIABAeOgQIIxAnOgQIABBDUPUBWOAJYPwKaABwAHgAgAGDAYgBhAaSAQMwLjaYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=cPIqY7aKFeuJur4Piva2qAI&bih=951&biw=962#imgrc=-7lakjotHtiE3M"
     }
   ]
 }

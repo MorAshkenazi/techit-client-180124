@@ -12,7 +12,7 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
         data-bs-theme="dark"
       >
         <div className="container-fluid">
-          <NavLink className="navbar-brand" to="/home">
+          <NavLink className="navbar-brand text-info" to="/home">
             TechIt
           </NavLink>
           <button
