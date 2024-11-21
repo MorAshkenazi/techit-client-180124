@@ -20,6 +20,7 @@ export async function getProductsFromCart() {
     for (let id of userCart.data[0].products) {
       promises.push(getProductById(id));
     }
+    // 3. return all the responses
     return Promise.all(promises);
   } catch (error) {
     console.log(error);
