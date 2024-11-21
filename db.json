@@ -15,9 +15,9 @@
       "isAdmin": false
     },
     {
-      "id": "bcb3",
-      "name": "Harry Potter",
-      "email": "harry@gmail.com",
+      "id": "bcc6",
+      "name": "Margol",
+      "email": "margol@gmail.com",
       "password": "12345678",
       "isAdmin": false
     }
@@ -62,7 +62,23 @@
   ],
   "carts": [
     {
-      "userId": 1,
+      "id": "1",
+      "userId": "1",
+      "products": [
+        "1",
+        "2"
+      ],
+      "active": true
+    },
+    {
+      "id": "2",
+      "userId": "2",
+      "products": [],
+      "active": true
+    },
+    {
+      "id": "8256",
+      "userId": "bcc6",
       "products": [],
       "active": true
     }

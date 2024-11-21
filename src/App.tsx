@@ -8,6 +8,7 @@ import Register from "./components/Register";
 import Profile from "./components/Profile";
 import PageNotFound from "./components/PageNotFound";
 import Products from "./components/Products";
+import Cart from "./components/Cart";
 
 function App() {
   const [isAdmin, setIsAdmin] = useState<boolean>();
@@ -21,6 +22,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>

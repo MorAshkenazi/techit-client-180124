@@ -3,6 +3,7 @@ import { FunctionComponent } from "react";
 import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { addUser } from "../services/usersService";
+import { createCart } from "../services/cartsService";
 
 interface RegisterProps {}
 
@@ -20,6 +21,11 @@ const Register: FunctionComponent<RegisterProps> = () => {
         .then((res) => {
           navigate("/home");
           localStorage.setItem("userId", JSON.stringify(res.data.id));
+          createCart(res.data.id)
+            .then((res) => {
+              console.log("Cart created successfully");
+            })
+            .catch((err) => console.log(err));
         })
         .catch((err) => console.log(err));
     },
