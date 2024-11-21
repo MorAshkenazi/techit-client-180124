@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import { getUserById } from "../services/usersService";
 import AddProductModal from "./AddProductModal";
 import UpdateProductModal from "./UpdateProductModal";
+import DeleteProductModal from "./DeleteProductModal";
 
 interface ProductsProps {}
 
@@ -14,6 +15,7 @@ const Products: FunctionComponent<ProductsProps> = () => {
   const [productsChanged, setProductsChanged] = useState<boolean>(false);
   const [openAddModal, setOpenAddModal] = useState<boolean>(false);
   const [openUpdateModal, setOpenUpdateModal] = useState<boolean>(false);
+  const [openDeleteModal, setOpenDeleteModal] = useState<boolean>(false);
   const [productId, setProductId] = useState<string>("");
 
   useEffect(() => {
@@ -54,45 +56,54 @@ const Products: FunctionComponent<ProductsProps> = () => {
         )}
         <div className="row mt-3">
           {products.length ? (
-            products.map((product: Product) => (
-              <div
-                key={product.id}
-                className="card col-md-4"
-                style={{ width: "18rem" }}
-              >
-                <div className="card-header">{product.category}</div>
-                <img
-                  src={product.image}
-                  className="card-img-top"
-                  alt={product.name}
-                  title={product.name}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{product.name}</h5>
-                  <p className="card-text">{product.description}</p>
-                  <p className="card-text text-success">{product.price}$</p>
-                  <button className="btn btn-primary">
-                    <i className="fa-solid fa-cart-shopping"></i>
-                  </button>
-                  {isAdmin && (
-                    <span>
-                      <button
-                        className="btn btn-warning mx-1"
-                        onClick={() => {
-                          setOpenUpdateModal(true);
-                          setProductId(product.id as string);
-                        }}
-                      >
-                        <i className="fa-solid fa-pen"></i>
+            products.map(
+              (product: Product) =>
+                product.available && (
+                  <div
+                    key={product.id}
+                    className="card col-md-4"
+                    style={{ width: "18rem" }}
+                  >
+                    <div className="card-header">{product.category}</div>
+                    <img
+                      src={product.image}
+                      className="card-img-top"
+                      alt={product.name}
+                      title={product.name}
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">{product.name}</h5>
+                      <p className="card-text">{product.description}</p>
+                      <p className="card-text text-success">{product.price}$</p>
+                      <button className="btn btn-primary">
+                        <i className="fa-solid fa-cart-shopping"></i>
                       </button>
-                      <button className="btn btn-danger">
-                        <i className="fa-solid fa-trash"></i>
-                      </button>
-                    </span>
-                  )}
-                </div>
-              </div>
-            ))
+                      {isAdmin && (
+                        <span>
+                          <button
+                            className="btn btn-warning mx-1"
+                            onClick={() => {
+                              setOpenUpdateModal(true);
+                              setProductId(product.id as string);
+                            }}
+                          >
+                            <i className="fa-solid fa-pen"></i>
+                          </button>
+                          <button
+                            className="btn btn-danger"
+                            onClick={() => {
+                              setOpenDeleteModal(true);
+                              setProductId(product.id as string);
+                            }}
+                          >
+                            <i className="fa-solid fa-trash"></i>
+                          </button>
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                )
+            )
           ) : (
             <p>No products </p>
           )}
@@ -106,6 +117,12 @@ const Products: FunctionComponent<ProductsProps> = () => {
       <UpdateProductModal
         show={openUpdateModal}
         onHide={() => setOpenUpdateModal(false)}
+        refresh={refresh}
+        productId={productId}
+      />
+      <DeleteProductModal
+        show={openDeleteModal}
+        onHide={() => setOpenDeleteModal(false)}
         refresh={refresh}
         productId={productId}
       />

@@ -29,7 +29,7 @@ const AddProduct: FunctionComponent<AddProductProps> = ({
       image: yup.string().required().url(),
     }),
     onSubmit: (values) => {
-      addProduct(values)
+      addProduct({ ...values, available: true })
         .then(() => {
           onHide();
           refresh();

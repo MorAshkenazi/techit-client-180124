@@ -1,7 +1,5 @@
-import { Product } from "./Product";
-
 export interface Cart {
   userId: string;
-  products: Product[];
+  products: string[];
   active: boolean;
 }

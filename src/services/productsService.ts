@@ -25,5 +25,5 @@ export function updateProduct(product: Product) {
 
 // delete product
 export function deleteProduct(id: string) {
-  return axios.delete(`${api}/${id}`);
+  return axios.patch(`${api}/${id}`, { available: false });
 }
